@@ -1,0 +1,32 @@
+{
+  "name": "food-delivery",
+  "version": "1.0.0",
+  "description": "This is a step towards learning React by simualting real life projects such as a food delivery application.",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/me-piyush/Food_delivery.git"
+  },
+  "keywords": [],
+  "author": "Piyush Raj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/me-piyush/Food_delivery/issues"
+  },
+  "homepage": "https://github.com/me-piyush/Food_delivery#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browsersList": [
+    "last 2 versions"
+  ]
+}
