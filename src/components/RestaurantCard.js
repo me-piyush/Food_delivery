@@ -7,7 +7,8 @@ const RestaurantCard = (props) => {
     resData?.info;
 
   return (
-    <div className="m-4 p-4 w-[250px] bg-gray-100 hoover: bg-gray-200 rounded-lg">
+    <div className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-300">
+      <br />
       <img
         className="rounded-lg"
         alt="res-logo"
@@ -20,6 +21,20 @@ const RestaurantCard = (props) => {
       <h4>{sla?.slaString}</h4>
     </div>
   );
+};
+
+export const withVegLabel = (RestaurantCard) => {
+  return (props) => {
+    const label= "Veg🟢";
+    console.log(props);
+  return(
+    <div>
+      <label className="absolute bg-gray-100 text-gray-900 mx-4  rounded-lg">{label}</label>
+      <RestaurantCard {...props} />
+    </div>
+  );
+  }
+  ;
 };
 
 export default RestaurantCard;

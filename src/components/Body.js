@@ -3,15 +3,15 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import RestaurantCard ,{withVegLabel} from "./RestaurantCard";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestraunt] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   const [searchText, setSearchText] = useState("");
-
+  const RestaurantCardVeg = withVegLabel(RestaurantCard);
   // Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -59,7 +59,6 @@ const Body = () => {
             className="px-4 py-2 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               // Filter the restraunt cards and update the UI
-
               const filteredRestaurant = listOfRestaurants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
@@ -90,7 +89,8 @@ const Body = () => {
             to={"/restaurants/" + restaurant?.info?.id}
             key={restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant.info?.veg === true ? (<RestaurantCardVeg resData={restaurant} />) : (
+            <RestaurantCard resData={restaurant} />)}
           </Link>
         ))}
       </div>
