@@ -1,9 +1,8 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard ,{withVegLabel} from "./RestaurantCard";
 import { useState, useEffect ,useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import RestaurantCard ,{withVegLabel} from "./RestaurantCard";
 import userContext from "../utils/userContext";
 
 const Body = () => {
@@ -49,6 +48,7 @@ const Body = () => {
       <div className="filter flex">
         <div className="search m-4 p-4">
           <input
+            data-testid="searchInput"
             type="text"
             className="border border-solid border-black"
             value={searchText}
